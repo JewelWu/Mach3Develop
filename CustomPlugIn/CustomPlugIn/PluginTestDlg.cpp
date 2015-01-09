@@ -44,12 +44,6 @@ void CPluginTestDlg::DoDataExchange(CDataExchange* pDX)
 	DDV_MinMaxInt(pDX, m_nDistanceMode, ABSOLUTE_DISTANCE, MAX_DISTANCE);
 }
 
-BOOL CPluginTestDlg::OnCommand( WPARAM wParam, LPARAM lParam )
-{
-    DbgMsg(("OnCommand: wParam=%d", ( UINT ) wParam ));
-    return CDialog::OnCommand( wParam, lParam );
-}
-
 void CPluginTestDlg::InitUI()
 {
     m_nDistanceMode = ( bAbsDistanceMode ) ? ABSOLUTE_DISTANCE : INCREMENTAL_DISTANCE;

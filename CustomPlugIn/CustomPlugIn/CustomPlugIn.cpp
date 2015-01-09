@@ -49,6 +49,8 @@ extern void	myHighSpeedUpdate();
 //Destruction routine for cleanup
 
 extern void myCleanUp();
+
+extern void myNotify(int ID);
  
 //----------------------------------------------------------------------------
  
@@ -62,6 +64,7 @@ BoolShort		GetLED;       // bool   GetLED(short code);
 VoidShortBool	SetLED;       // void	SetLED();
 CSTRret			GetProName;   // CString GetProName();
 VoidLPCSTR		Code;         // void Code("G0X10Y10");
+IntShort        GetMenuRange;
 
 // High spped thread data block
 
@@ -307,6 +310,11 @@ extern "C" __declspec(dllexport) char* SetProName( CString name)
 	return((char*)(LPCTSTR)(strPlgName));  
 }   
 
+extern "C" __declspec(dllexport) void SetGetMenuRange(IntShort pFunc)          //void DoButton( short code );
+{
+    GetMenuRange = pFunc; 
+}
+
 //----------------------------------------------------------------------------
 
 // Calls into the DLL
@@ -512,4 +520,10 @@ extern "C" __declspec(dllexport) void Update()
 }
 
 //----------------------------------------------------------------------------
+extern "C" __declspec(dllexport) void Notify(int ID) 
 
+{
+    //here ID is the menu item just clicked..
+    AFX_MANAGE_STATE(AfxGetStaticModuleState());
+    myNotify(ID);
+}

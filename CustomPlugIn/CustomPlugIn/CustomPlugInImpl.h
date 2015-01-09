@@ -14,6 +14,7 @@ typedef void (_cdecl *DoubleShortDouble) ( short , double );
 typedef bool (_cdecl *BoolShort) ( short );
 typedef void (_cdecl *CSTRret) ( CString );
 typedef void (_cdecl *VoidLPCSTR) (LPCTSTR );
+typedef int  (_cdecl *IntShort) ( short );
 
 // ===========================================================================================
 //
@@ -54,7 +55,9 @@ void myCleanUp();
 
 void myHome(short axis);
 
-void myProbe();                                         
+void myProbe();            
+
+void myNotify(int ID);
 
 // ==================================================================================================
 //
@@ -84,6 +87,7 @@ extern DoubleShortDouble  SetDRO;       // void SetDRO(short code, double value)
 extern BoolShort          GetLED;       // bool GetLED(short code);
 extern CSTRret            GetProName;   // CString GetProName()
 extern VoidLPCSTR         Code;         // void Code("G0X10Y10");
+extern IntShort           GetMenuRange;
 
 // =====================================================================================================
 

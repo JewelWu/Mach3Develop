@@ -19,7 +19,6 @@ public:
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-    virtual BOOL OnCommand( WPARAM wParam, LPARAM lParam );
     
 	DECLARE_MESSAGE_MAP()
 public:

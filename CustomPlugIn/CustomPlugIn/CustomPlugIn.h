@@ -19,6 +19,7 @@ typedef void (_cdecl *CSTRret) ( CString );
 typedef void (_cdecl *VoidLPCSTR) (LPCTSTR );
 typedef void (_cdecl *VoidShortBool) ( short, bool );
 typedef void (_cdecl *DoubleShortDouble) ( short , double );
+typedef int  (_cdecl *IntShort) ( short );
 
 extern OneShort           DoButton;     // void DoButton(code)
 extern DoubleShort        GetDRO;       // Double GetDRO(code)
@@ -26,6 +27,7 @@ extern DoubleShortDouble  SetDRO;       // void SetDRO(short code, double value)
 extern BoolShort          GetLED;       // bool GetLED(short code);
 extern CSTRret            GetProName;   // CString GetProName()
 extern VoidLPCSTR         Code;         // void Code("G0X10Y10");
+extern IntShort           GetMenuRange;
 
 //----------------------------------------------------------------------------
 

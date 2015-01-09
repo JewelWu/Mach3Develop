@@ -22,6 +22,7 @@
 bool MachWindowFound = false;
 HWND mach3Wnd;
 CWnd mach3CWnd;
+int RangeStart = 0;
 
 CPluginTestDlg *dlg;
 
@@ -98,6 +99,7 @@ void myInitControl()
 {
 	DbgMsg(("myInitControl entry"));
 
+    RangeStart  = GetMenuRange( 1 ); //we request 2 menu ID's to use..
 
 	DbgMsg(("myInitControl exit"));
 }
@@ -209,6 +211,29 @@ void myHighSpeedUpdate()
 
 //----------------------------------------------------------------------------
 
+void myNotify(int ID)
+{
+    DbgMsg(("myNotify entry"));
+
+    if (ID == RangeStart)
+    {
+        GetCurAbsoluteMode();
+        if ( dlg )
+        {
+            dlg->InitUI();
+            dlg->ShowWindow(SW_SHOW);
+        }
+        else
+        {
+            DbgMsg(("myNotify: dlg NULL"));
+        }
+    }
+
+    DbgMsg(("myNotify exit"));
+}
+
+//----------------------------------------------------------------------------
+
 // ======================================================================================================
 //
 // The Helpers follow
@@ -293,7 +318,7 @@ void CreateDlgOutside(void)
                 int pos = FindMenuItem( menu, "PlugIn Control" );
                 //here we can add menu items to Mach3's menu..
                 HMENU control = GetSubMenu( menu->m_hMenu, pos);
-                InsertMenu ( control, -1, MF_BYPOSITION, WM_CUSTOM_PLUGIN_OPEN, "CustomPlugin" );
+                InsertMenu ( control, -1, MF_BYPOSITION, RangeStart, "CustomPlugin" );
                 mach3CWnd.DrawMenuBar(); 
             }
         }
