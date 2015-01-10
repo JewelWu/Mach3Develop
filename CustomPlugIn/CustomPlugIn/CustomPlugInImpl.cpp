@@ -318,7 +318,7 @@ void CreateDlgOutside(void)
                 int pos = FindMenuItem( menu, "PlugIn Control" );
                 //here we can add menu items to Mach3's menu..
                 HMENU control = GetSubMenu( menu->m_hMenu, pos);
-                InsertMenu ( control, -1, MF_BYPOSITION, RangeStart, "CustomPlugin" );
+                InsertMenu ( control, -1, MF_BYPOSITION, RangeStart, "ÂX¥R¥\¯à" );
                 mach3CWnd.DrawMenuBar(); 
             }
         }
