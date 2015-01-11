@@ -213,7 +213,7 @@ void myHighSpeedUpdate()
 
 void myNotify(int ID)
 {
-    DbgMsg(("myNotify entry"));
+    //DbgMsg(("myNotify entry"));
 
     if (ID == RangeStart)
     {
@@ -229,7 +229,7 @@ void myNotify(int ID)
         }
     }
 
-    DbgMsg(("myNotify exit"));
+    //DbgMsg(("myNotify exit"));
 }
 
 //----------------------------------------------------------------------------
@@ -310,11 +310,9 @@ void CreateDlgOutside(void)
         menued = true;
         if (mach3Wnd != NULL)
         {
-            DbgMsg(("CreateDlgOutside: mach3Wnd"));
             CMenu *menu = mach3CWnd.GetMenu();
             if ( menu )
             {
-                DbgMsg(("menu"));
                 int pos = FindMenuItem( menu, "PlugIn Control" );
                 //here we can add menu items to Mach3's menu..
                 HMENU control = GetSubMenu( menu->m_hMenu, pos);

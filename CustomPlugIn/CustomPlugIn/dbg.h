@@ -37,7 +37,8 @@ extern WORD __dbgLevel;
 
 #define ErrMsg(printf_exp) ((void)0)
 #define RelMsg(printf_exp) (void)(ReleaseMessage printf_exp)
-#define DbgMsg(printf_exp) ((void)0)
+//#define DbgMsg(printf_exp) ((void)0)
+#define DbgMsg(printf_exp) (void)(ReleaseMessage printf_exp)
 #define ApiDbgMsg(printf_exp) ((void)0)
 #define PushDbgMode()
 #define PopDbgMode()

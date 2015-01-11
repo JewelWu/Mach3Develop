@@ -15,7 +15,7 @@
 CMach4 mach4;
 CMyScriptObject scripter;
 bool connected = FALSE;
-bool bAbsDistanceMode = true;
+BOOL bAbsDistanceMode = true;
 
 //----------------------------------------------------------------------------
 

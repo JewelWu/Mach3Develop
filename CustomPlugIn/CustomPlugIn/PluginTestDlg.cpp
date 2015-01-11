@@ -12,7 +12,7 @@
 #include "Mach3ObjectModel.h"
 
 extern CMyScriptObject scripter;
-extern bool bAbsDistanceMode;
+extern BOOL bAbsDistanceMode;
 
 enum EDISTANCE_MODE
 {

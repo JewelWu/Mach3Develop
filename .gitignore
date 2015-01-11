@@ -213,3 +213,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+CustomPlugIn/CustomPlugIn/_org_Resource.h
+CustomPlugIn/CustomPlugIn/_org_stdafx.cpp
+CustomPlugIn/CustomPlugIn/_org_stdafx.h
